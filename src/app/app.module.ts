@@ -5,16 +5,25 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { ChildComponent } from './child/child.component';
+import { Child2Component } from './child2/child2.component';
+import {RouterModule, Routes} from '@angular/router';
+
+const routeConfig: Routes = [
+  {path: '', component: ChildComponent},
+  {path: 'child2', component: Child2Component}
+]
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChildComponent
+    ChildComponent,
+    Child2Component
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(routeConfig) // 要把路由配置导入进来
   ],
   providers: [],
   bootstrap: [AppComponent]

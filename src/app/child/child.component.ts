@@ -1,11 +1,11 @@
-import {AfterContentChecked, AfterContentInit, AfterViewInit, Component, OnInit} from '@angular/core';
+import {AfterContentChecked, AfterContentInit, AfterViewInit, Component, OnDestroy, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-child',
   templateUrl: './child.component.html',
   styleUrls: ['./child.component.css']
 })
-export class ChildComponent implements AfterContentInit, AfterContentChecked, AfterViewInit {
+export class ChildComponent implements AfterContentInit, AfterContentChecked, AfterViewInit, OnDestroy {
 
   constructor() { }
 
@@ -19,6 +19,10 @@ export class ChildComponent implements AfterContentInit, AfterContentChecked, Af
 
   ngAfterViewInit(): void {
     console.log('子组件视图内容初始化完毕');
+  }
+
+  ngOnDestroy() {
+    console.log('child组件被销毁');
   }
 
 }

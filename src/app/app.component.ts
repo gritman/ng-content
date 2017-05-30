@@ -9,9 +9,11 @@ export class AppComponent implements AfterContentInit, AfterContentChecked, Afte
 
   title = 'app works!';
   divContent = '<div>父组件属性</div>';
+  message = 'hello';
 
   ngAfterContentInit(): void {
     console.log('父组件投影内容初始化完毕');
+    this.message = 'hellow!';
   }
 
   ngAfterContentChecked(): void {

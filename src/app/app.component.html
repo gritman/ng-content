@@ -1,5 +1,5 @@
 <div class="wrapper">
-  <h2>我是父组件</h2>
+  <h2>我是父组件child2</h2>
   <div>这个div定义在父组件中</div>
   <app-child>
     <!-- 这个插值表达式title只能使用父组件的属性 -->
@@ -9,3 +9,11 @@
 </div>
 <div [innerHTML]="divContent">
 </div>
+{{message}}
+<div>
+  <h2>测试路由onDestroy</h2>
+  <a [routerLink]="['/']">child1</a>
+  <a [routerLink]="['/child2']">child2</a>
+  <router-outlet></router-outlet>
+</div>
+
